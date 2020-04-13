@@ -1,5 +1,5 @@
 const express = require('express');
-//const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 //const mongoose = require('mongoose');
 
 // set up express app
@@ -24,7 +24,7 @@ const app = express();
 
 app.use(express.static(__dirname + '/public'));
 
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 // initialize routes
 //app.use('/api', require('./routes/api'));
 
