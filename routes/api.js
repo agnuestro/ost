@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Ninja = require('../models/ninja');
 
+router.get('/', (req, res) => {
+    res.render("index")
+});
+
 // get a list of ninjas from the db
 router.get('/ninjas', function(req, res, next){
     /*Ninja.find({}).then(function(ninjas){
