@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 //const mongoose = require('mongoose');
 
 // set up express app
@@ -22,19 +22,29 @@ const app = express();
 // });
 // mongoose.Promise = global.Promise;
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 // initialize routes
 //app.use('/api', require('./routes/api'));
 
 // error handling middleware
-app.use(function(err, req, res, next){
-    //console.log(err);
-    res.status(422).send({error: err.message});
-});
+// app.use(function(err, req, res, next){
+//     //console.log(err);
+//     res.status(422).send({error: err.message});
+// });
 
 // listen for requests
-app.listen(process.env.port || 8000, function(){
-    console.log('now listening for requests');    
+const port = process.env.PORT || 8000;
+app.listen(port, () => {
+    console.log('now listening for requests at port ' + port);    
 })
+
+
+var express = require('express');
+var app = express();
+
+
+
+
+
