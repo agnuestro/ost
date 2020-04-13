@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Ninja = require('../models/ninja');
 
-router.get('/test', (req, res) => {
-    res.render("test")
-});
 
 // get a list of ninjas from the db
 router.get('/ninjas', function(req, res, next){
