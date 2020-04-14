@@ -6,12 +6,18 @@ const Ninja = require('../models/ninja');
 //     res.render("index");
 // });
 
+//router.get('/ninjas/all', () => {
+//    Ninja.find().then( () => {
+//        res.send(results);
+//    });
+//});
+
+
 // get a list of ninjas from the db
 router.get('/ninjas', function(req, res, next){
     /*Ninja.find({}).then(function(ninjas){
         res.send(ninjas);
     });*/
-
     Ninja.aggregate(
         [
             { 
